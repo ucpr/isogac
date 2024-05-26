@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.83"
+  },
+  "name": "isogac",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "deploy": "clasp push",
+    "open": "clasp open"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
