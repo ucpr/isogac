@@ -43,5 +43,14 @@ async function main() {
     } catch (e) {
       Logger.log(`Error: ${e}`);
     }
+
+    return;
+  }
+
+  try {
+    // busy ステータスを解除
+    await github.updateUserStatus("work", ":v:", false);
+  } catch (e) {
+    Logger.log(`Error: ${e}`);
   }
 }
