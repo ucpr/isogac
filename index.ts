@@ -25,14 +25,22 @@ function newConfig(): Config {
   if (ghToken === null) {
     throw new Error("GTIHUB_TOKEN is not set");
   }
-  let morningHour: number | null = parseNumber(properties.getProperty("MORNING_HOUR"));
+  let morningHour: number | null = parseNumber(
+    properties.getProperty("MORNING_HOUR"),
+  );
   if (morningHour === null) {
     morningHour = 14;
   }
-  let mustWords: string[] = properties.getProperty("MUST_WORDS")?.split(",") || [];
-  let zenkyuWords: string[] = properties.getProperty("ZENKYU_WORDS")?.split(",") || ["全休", "休み"];
-  let gozenkyuWords: string[] = properties.getProperty("GOZENKYU_WORDS")?.split(",") || ["午前休", "午前半休"];
-  let gogoKyuWords: string[] = properties.getProperty("GOGO_KYU_WORDS")?.split(",") || ["午後休", "午後半休"];
+  let mustWords: string[] = properties.getProperty("MUST_WORDS")?.split(",") ||
+    [];
+  let zenkyuWords: string[] =
+    properties.getProperty("ZENKYU_WORDS")?.split(",") || ["全休", "休み"];
+  let gozenkyuWords: string[] =
+    properties.getProperty("GOZENKYU_WORDS")?.split(",") ||
+    ["午前休", "午前半休"];
+  let gogoKyuWords: string[] =
+    properties.getProperty("GOGO_KYU_WORDS")?.split(",") ||
+    ["午後休", "午後半休"];
 
   return {
     calendarId: cid,
