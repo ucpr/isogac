@@ -4,7 +4,7 @@ interface Config {
 }
 
 function newConfig(): Config {
-  const properties = PropertiesService.getScriptProperties()
+  const properties = PropertiesService.getScriptProperties();
   const cid: string | null = properties.getProperty("CALENDAR_ID");
   if (cid === null) {
     throw new Error("CALENDAR_ID is not set");
@@ -17,7 +17,7 @@ function newConfig(): Config {
   return {
     calendarId: cid,
     githubToken: ghToken,
-  }
+  };
 }
 
 async function main() {
@@ -30,7 +30,7 @@ async function main() {
   const events = calendar.getEventsForDay(today);
 
   let isBusy = false;
-  events.forEach(event => {
+  events.forEach((event) => {
     if (event.getTitle().includes("全休")) {
       isBusy = true;
       return;
