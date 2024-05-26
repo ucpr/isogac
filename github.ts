@@ -50,7 +50,6 @@ class GitHubGraphQLClient {
         const query = `
             mutation($message: String!, $emoji: String!, $limitedAvailability: Boolean!) {
                 changeUserStatus(input: { message: $message, emoji: $emoji, limitedAvailability: $limitedAvailability }) {
-                    clientMutationId
                     status {
                         message
                         emoji
